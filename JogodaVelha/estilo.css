@@ -1,0 +1,28 @@
+body{
+	font-family: Arial, Tomaha;
+	background-color : rgba(0, 0, 255, 0.2);
+}
+
+div{
+	width : 800px;
+	margin: auto;
+	background-color : rgba(0, 0, 255, 0.4);
+}
+
+div h1{
+	text-align: center;
+}
+
+table{
+	/*border-collapse: collapse; juntar as bordas*/
+	margin: auto;
+}
+
+td{
+	border: 1px solid black;
+	/*padding: 80px;*/
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	font-size: 60px;
+}

@@ -5,7 +5,7 @@ body{
 
 div.corpo{
 	width : 820px;
-	height : 600px;
+	height : 510px;
 	margin: auto;
 }
 
@@ -49,6 +49,14 @@ div.jogo{
 	margin : auto;
 	float : right;
 	background-color : rgba(0, 0, 255, 0.4);	
+}
+
+div.rodape{
+	width : 820px;
+	margin: auto;
+	background-color : rgba(0, 0, 255, 0.4);
+	border : 1px solid white;
+	text-align: center;
 }
 
 div h1{

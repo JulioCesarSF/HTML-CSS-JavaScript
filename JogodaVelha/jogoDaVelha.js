@@ -25,7 +25,7 @@ function mudar(celula){
 function verificarLinhas(){
 	/*
 	 * 0 1 2     0, 0+1, 0+2 , linha 0 : 0, 1, 2
-	 * 3 4 5	 1, 1+3, 1+6 , linha 3 : 3, 4, 5
+	 * 3 4 5	 1, 1+3, 1+6 , linha 2 : 3, 4, 5
 	 * 6 7 8	 2, 2+3, 2+6 , linha 6 : 6, 7, 8	
 	 * 
 	 * 

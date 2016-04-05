@@ -22,6 +22,27 @@ function mudar(celula){
 	
 }
 
+function addPontoX(){
+	var elemento = document.getElementById("pontosx");
+	var pontos = elemento.innerHTML;
+	pontos++;
+	elemento.innerHTML = pontos;
+}
+
+function addPontoO(){
+	var elemento = document.getElementById("pontoso");
+	var pontos = elemento.innerHTML;
+	pontos++;
+	elemento.innerHTML = pontos;
+}
+
+function addPontoEmpate(){
+	var elemento = document.getElementById("empates");
+	var pontos = elemento.innerHTML;
+	pontos++;
+	elemento.innerHTML = pontos;
+}
+
 function todasOcupadas(){
 	var contador = 0;
 	var tabela = document.getElementsByTagName("table")[0];
@@ -30,8 +51,10 @@ function todasOcupadas(){
 		if( elementos[i].innerHTML != "")
 			contador++;
 	
-	if(contador == 9)
+	if(contador == 9){
+		addPontoEmpate()
 		return true;
+	}
 	
 	return false;
 }
@@ -49,10 +72,12 @@ function verificarLinhas(){
 	for(var i = 0; i <  elementos.length; i+=3){ // i+=3 pular para próxima linha
 		if( elementos[i].innerHTML == "x" && elementos[i + 1].innerHTML == "x" && elementos[i + 2].innerHTML == "x"){
 			alert("Jogador X ganhou!");
+			addPontoX()
 			return true;
 		}
 		if( elementos[i].innerHTML == "o" && elementos[i + 1].innerHTML == "o" && elementos[i + 2].innerHTML == "o"){
 			alert("Jogador O ganhou!");
+			addPontoO()
 			return true;
 		}		
 	}
@@ -75,10 +100,12 @@ function verificarColunas(){
 			break;
 		if( elementos[i].innerHTML == "x" && elementos[i + 3].innerHTML == "x" && elementos[i + 6].innerHTML == "x"){
 			alert("Jogador X ganhou!");
+			addPontoX()
 			return true;
 		}
 		if( elementos[i].innerHTML == "o" && elementos[i + 3].innerHTML == "o" && elementos[i + 6].innerHTML == "o"){
 			alert("Jogador O ganhou!");
+			addPontoO()
 			return true;
 		}		
 	}
@@ -91,12 +118,14 @@ function verificarVertical(){
 		&& document.getElementById("5").innerHTML == "x" 
 			&& document.getElementById("9").innerHTML == "x"){
 		alert("Jogador X ganhou!");
+		addPontoX()
 		return true;
 	}
 	if( document.getElementById("3").innerHTML == "x" 
 		&& document.getElementById("5").innerHTML == "x" 
 			&& document.getElementById("7").innerHTML == "x"){
 		alert("Jogador X ganhou!");
+		addPontoX()
 		return true;
 	}
 	//o vertical
@@ -104,12 +133,14 @@ function verificarVertical(){
 		&& document.getElementById("5").innerHTML == "o" 
 			&& document.getElementById("9").innerHTML == "o"){
 		alert("Jogador O ganhou!");
+		addPontoO()
 		return true;
 	}
 	if( document.getElementById("3").innerHTML == "o" 
 		&& document.getElementById("5").innerHTML == "o" 
 			&& document.getElementById("7").innerHTML == "o"){
 		alert("Jogador O ganhou!");
+		addPontoO()
 		return true;
 	}
 }

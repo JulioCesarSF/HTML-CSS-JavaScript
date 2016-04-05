@@ -1,28 +1,74 @@
 body{
-	font-family: Arial, Tomaha;
+	font-family : Arial, Tohama;
 	background-color : rgba(0, 0, 255, 0.2);
 }
 
-div{
-	width : 800px;
+div.corpo{
+	width : 820px;
+	height : 600px;
 	margin: auto;
+}
+
+div.tituloJogo{
 	background-color : rgba(0, 0, 255, 0.4);
+	border : 1px solid white;
+	margin-bottom: 10px;
+}
+
+div.pontos{
+	border : 1px solid white;
+	border-radius : 2px;
+	width: 400px;
+	height : 400px;
+	float : left;
+	background-color : rgba(0, 0, 255, 0.4);
+	text-align : center;
+}
+
+div.pontos2 {
+	width : 200px;
+	position : relative;
+	top: 25%;
+	left : 25%;
+	background-color: orange;
+	border : 1px solid white;
+	border-radius : 5px;
+}
+
+div.tituloPontos{
+	background-color : white;
+	border : 1px solid white;
+	border-radius : 2px 2px 0px 0px;
+}
+
+div.jogo{
+	border : 1px solid white;
+	border-radius : 2px;
+	width : 400px;
+	height : 400px;
+	margin : auto;
+	float : right;
+	background-color : rgba(0, 0, 255, 0.4);	
 }
 
 div h1{
-	text-align: center;
+	text-align : center;
+	text-shadow: 1px 1px white;
 }
 
 table{
 	/*border-collapse: collapse; juntar as bordas*/
-	margin: auto;
+	margin : auto;	
+	position: relative;
+    top: 15%;
 }
 
 td{
-	border: 1px solid black;
+	border : 1px solid white;
 	/*padding: 80px;*/
-	width: 80px;
-	height: 80px;
-	text-align: center;
-	font-size: 60px;
+	width : 80px;
+	height : 80px;
+	text-align : center;
+	font-size : 60px;
+	vertical-align: middle;
 }

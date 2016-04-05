@@ -80,3 +80,7 @@ td{
 	font-size : 60px;
 	vertical-align: middle;
 }
+
+audio { 
+  display:none;
+}

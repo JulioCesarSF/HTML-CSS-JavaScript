@@ -14,12 +14,26 @@ function mudar(celula){
 		celula.innerHTML = atual;
 		celula.style.backgroundColor=cor;	
 	
-		if(verificarLinhas() || verificarColunas() || verificarVertical())
+		if(verificarLinhas() || verificarColunas() || verificarVertical() || todasOcupadas())
 			reiniciar();
 		
 	}else
 		alert("Casa já ocupada!");	
 	
+}
+
+function todasOcupadas(){
+	var contador = 0;
+	var tabela = document.getElementsByTagName("table")[0];
+	var elementos = tabela.getElementsByTagName("td");
+	for(var i = 0; i <  elementos.length; i++)
+		if( elementos[i].innerHTML != "")
+			contador++;
+	
+	if(contador == 9)
+		return true;
+	
+	return false;
 }
 
 function verificarLinhas(){

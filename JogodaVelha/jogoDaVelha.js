@@ -11,11 +11,14 @@ function mudar(celula){
 			atual = "x";
 			cor = "white";
 		}
+		marcarSom();
+		
 		celula.innerHTML = atual;
-		celula.style.backgroundColor=cor;	
+		celula.style.backgroundColor=cor;		
 	
 		if(verificarLinhas() || verificarColunas() || verificarVertical() || todasOcupadas())
 			reiniciar();
+		
 		
 	}else
 		alert("Casa já ocupada!");	
@@ -153,6 +156,10 @@ function reiniciar(){
 		elementos[i].style.backgroundColor = "";
 	}	
 	atual = "o";	
+}
+
+function marcarSom(){
+	document.getElementById("marcar").play();
 }
 
 /*

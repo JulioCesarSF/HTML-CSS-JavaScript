@@ -2,38 +2,57 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Tick Tack Toe</title>
 <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
-	<div>
-		<h1>Jogo da Veia</h1>
-	</div>
-		
-	<div>
-		<table>
-			<tr>
-				<td onclick="mudar(this)" id="1"></td>
-				<td onclick="mudar(this)" id="2"></td>
-				<td onclick="mudar(this)" id="3"></td>
-			</tr>
-			
-			<tr>
-				<td onclick="mudar(this)" id="4"></td>
-				<td onclick="mudar(this)" id="5"></td>
-				<td onclick="mudar(this)" id="6"></td>
-			</tr>
-			
-			<tr>
-				<td onclick="mudar(this)" id="7"></td>
-				<td onclick="mudar(this)" id="8"></td>
-				<td onclick="mudar(this)" id="9"></td>
-			</tr>
-			
-		</table>
-	</div>
-	
 
+	<div class="corpo">
+	
+		<div class="tituloJogo">
+			<h1>Tick Tack Toe</h1>
+		</div>
+		
+		<div class="bloco">
+		
+			<div class="pontos">
+				<div class="pontos2">
+					<div class="tituloPontos">
+						<h2>Pontuação</h2>
+					</div>
+					
+					<p id="pontosx">Jogador X : 0</p>
+					<p id="pontoso">Jogador O : 0</p>
+					<p id="empates">Empates : 0</p>
+					
+				</div>
+			</div>
+				
+			<div class="jogo">
+				<table>
+					<tr>
+						<td onclick="mudar(this)" id="1"></td>
+						<td onclick="mudar(this)" id="2"></td>
+						<td onclick="mudar(this)" id="3"></td>
+					</tr>
+					
+					<tr>
+						<td onclick="mudar(this)" id="4"></td>
+						<td onclick="mudar(this)" id="5"></td>
+						<td onclick="mudar(this)" id="6"></td>
+					</tr>
+					
+					<tr>
+						<td onclick="mudar(this)" id="7"></td>
+						<td onclick="mudar(this)" id="8"></td>
+						<td onclick="mudar(this)" id="9"></td>
+					</tr>				
+				</table>
+			</div> <!-- jogo -->	
+			
+		</div><!-- bloco -->
+		
+	</div><!-- corpo -->
 
 	
 <script type="text/javascript" src="jogoDaVelha.js"></script>

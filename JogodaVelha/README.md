@@ -2,5 +2,4 @@
 
 Funcionando: http://www.juliocesarsf.16mb.com/
 
-* Adicionar pontuação
-* Precisa de um código melhor no javascript
+* Adicionar para jogar contra o computador

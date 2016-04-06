@@ -1,0 +1,29 @@
+
+
+body{
+	background-color: rgba(255, 125, 0, 0.5);
+}
+
+h1{
+	color : white;
+	text-decoration : overline;
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+h2{
+	color : blue;
+	text-decoration : underline;
+	background-color: rgba(0, 255, 0, 0.5);
+}
+
+p{
+	color : cyan;
+	text-decoration : line-through;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+a{
+	color : black;
+	text-decoration : blink; /*ficar piscando?*/
+	background-color: rgba(0, 0, 255, 0.5);
+}

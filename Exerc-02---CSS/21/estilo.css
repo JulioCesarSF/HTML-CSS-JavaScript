@@ -1,0 +1,17 @@
+
+
+#l1{
+	list-style: decimal-leading-zero;
+}
+
+#l2{
+	list-style: lower-roman;
+}
+
+#l3{
+	list-style: upper-roman;
+}
+
+#l4{
+	list-style: lower-latin;
+}

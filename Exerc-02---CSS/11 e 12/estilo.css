@@ -1,0 +1,16 @@
+
+
+#a{
+	text-indent: 40px;
+	text-align: center;
+}
+
+#b{
+	text-indent: 20px;
+	text-align: right;
+}
+
+#c{
+	text-indent: -40px;
+	text-align: left;
+}

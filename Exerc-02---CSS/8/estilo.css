@@ -1,0 +1,12 @@
+
+
+body{
+	background-image: url("http://www.subbuindesign.com/wp-content/uploads/2013/02/css-logo-vector-logo-primary.jpg");
+	background-position: bottom right;	
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+p{
+	line-height: 1000px;	
+}

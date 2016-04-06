@@ -1,0 +1,26 @@
+
+
+body{
+	/* 3 */
+	background-image: url("https://images5.alphacoders.com/423/423148.jpg");
+	/* 4 */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* 5, 6, e 7
+	precisa usar uma imagem menor para dar o efeito com o valores:
+	repeat-x	The background image will be repeated only horizontally
+	repeat-y	The background image will be repeated only vertically
+	repeat	The background image will be repeated both vertically and horizontally.
+	*/
+}
+/* aumentei tamanho da linha pra criar a barra de rolagem, line-height: 1000px;
+repare como a imagem de fundo não sai do lugar , "background-attachment: fixed;"
+*/
+p{
+	line-height: 1000px;
+	color : red;
+	text-align: center;
+	font-size: 50px;
+	border: 5px solid white;
+	background-color : rgba(0, 0, 0, 0.7);
+}

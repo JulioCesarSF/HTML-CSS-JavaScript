@@ -1,0 +1,20 @@
+
+
+#p1{
+	letter-spacing: 10px; /* espaço entre letras */
+	word-spacing: 50px; /* espaço entre palavras */
+	font-family: Arial; /* família de fonte */
+	font-size: 50px; /* tamanho de fonte */
+	color : blue; /* cor da fonte */
+	font-style: italic; /* estilo de fonte */
+	
+}
+
+#p2{
+	letter-spacing: 50px;
+	word-spacing: 10px;
+	font-family: Tohama;
+	font-size: 25px;
+	color: red;
+	font-style: oblique;
+}

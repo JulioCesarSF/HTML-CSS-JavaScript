@@ -1,0 +1,18 @@
+
+
+ul{
+	list-style-image: url("http://www.ccv.ufc.br/newpage/templates/mini-website-builder/images/logos/marcador.png");
+}
+
+p{
+	margin-left: 100px;
+}
+
+#p2{
+	margin-right: 100px;
+}
+
+#p3{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}

@@ -1,0 +1,26 @@
+
+
+#d1{
+	padding: 5px 6px 7px 8px; /* padding é o espaçamento INTERNO (do conteúdo para a borda do div)*/
+	margin : 5px 6px 7px 8px; /* margin é o espaçamento EXTERNO (entre elementos da página)*/
+	border: 1px solid black;
+	
+}
+
+#d2{
+	padding: 1px 2px 3px 4px;
+	margin : 1px 2px 3px 4px;
+	border : 2px dotted red;
+}
+
+#d3{
+	padding: 11px 12px 13px 14px;
+	margin : 11px 12px 13px 14px;
+	border: 3px dashed blue;
+}
+
+#d4{
+	padding: 21px 22px 23px 24px;
+	margin : 21px 22px 23px 24px;
+	border: 4px double green;
+}

@@ -1,1 +1,1 @@
-*Jogo simples para adivinhar onde está a imagem.
+* Jogo simples para adivinhar onde está a imagem.

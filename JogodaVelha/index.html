@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tick Tack Toe</title>
+<title>Tic Tac Toe</title>
 <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
@@ -10,7 +10,7 @@
 	<div class="corpo">
 	
 		<div class="tituloJogo">
-			<h1>Tick Tack Toe</h1>
+			<h1>Tic Tac Toe</h1>
 		</div>
 		
 		<div class="bloco">
@@ -29,10 +29,23 @@
 			</div>
 				
 			<div class="jogo">
+			
+				<div class="pc">
+				
+					<input type="checkbox" id="computadorAleatorio">
+					<label for="computadorAleatorio">Computador (aleatório)</label>
+				
+				
+					<input type="checkbox" id="computador">
+					<label for="computador">Computador</label>
+				
+				</div>
+							
+			
 				<table>
 					<tr>
 						<td onclick="mudar(this)" id="1"></td>
-						<td onclick="mudar(this)" id="2"></td>
+						<td onclick="mudar(this)" id="2"></td> <!-- cell with problem in when click to play against pc -->
 						<td onclick="mudar(this)" id="3"></td>
 					</tr>
 					
@@ -63,7 +76,6 @@
 
 <audio controls id="marcar">
 <source src="marcar.mp3" type="audio/mpeg">
-Seu navegador não suporta audio mp3.
 </audio>
 
 </body>

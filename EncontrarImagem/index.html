@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Find It</title>
+
+<link rel="stylesheet" type="text/css" href="estilo.css">
+
+</head>
+<body>
+
+	<div class="all">
+
+		<div class="title">
+			<h1>Find It</h1>
+		</div>		
+		
+		<div class="game">
+		
+		<div class="buttons">
+			<div><p id="chances">Chances<p id="points">3</p></p></div>
+			<button onclick="restart()">Restart</button>			
+		</div>
+		
+		<div class="tabela">	
+			
+			<table>
+				<tr>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p1" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p2" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p3" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+				</tr>
+				
+				<tr>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p4" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p5" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p6" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+				</tr>
+				
+				<tr>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p7" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p8" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+					<td onclick="check(this)"><img src="find.png" alt="find" id="p9" onmouseover="hoverImage(this)" onmouseout="unHoverImage(this)"></td>
+				</tr>
+			
+			</table>
+		</div>			
+			
+		</div>			
+		
+		<div class="foot">
+			<a href="https://github.com/juliocesarsf">github.com/juliocesarsf</a>
+		</div>
+		
+	</div>
+
+
+<script type="text/javascript" src="game.js">
+start();
+</script>
+
+</body>
+</html>

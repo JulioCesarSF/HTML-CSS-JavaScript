@@ -1,27 +1,207 @@
+//C:\Users\schin\Desktop\Arquivos\Thiago\JogoDaVelha\WebContent\index.html
+
 var atual = "o";
 
-function mudar(celula){
-	var cor;
+function myMove(celula){
 	if(celula.innerHTML == ""){
-		if(atual == "x"){
-			atual = "o";
-			cor = "red";
-		}
-		else{
-			atual = "x";
-			cor = "white";
-		}
-		marcarSom();
-		
-		celula.innerHTML = atual;
-		celula.style.backgroundColor=cor;		
+		celula.innerHTML = "x";
+		celula.style.backgroundColor = "white";	
+		return true;
+	}else{
+		alert("Casa ocupada!");
+		return false;
+	}
+}
+
+function mudar(celula){
+	var cor;	
+	var computadorAleatorio = document.getElementById("computadorAleatorio").checked;
+	console.log("computadorAleatorio: " + computadorAleatorio);
+	var computador = document.getElementById("computador").checked;
+	console.log("computador: " + computador);
 	
-		if(verificarLinhas() || verificarColunas() || verificarVertical() || todasOcupadas())
-			reiniciar();
+	//if(celula.innerHTML == ""){ // i can click
+		console.log("celula vazia");
+		if(computadorAleatorio){ //play with random pc	
+			//console.log("myMove");
+				
+			if(myMove(celula)){
+				if(verificarGanhador())
+					reiniciar();
+				else
+					aiPlayRandom();
+			}
+						
+		}else if(computador){ //play with pc						
 		
+				if(myMove(celula)){	
+					if(verificarGanhador())
+						reiniciar();
+					else
+						aiPlay();
+				}
+						
+		}else{ // player x player
+			if(atual == "x"){
+				atual = "o";
+				cor = "red";
+			}
+			else{
+				atual = "x";
+				cor = "white";
+			}
+			
+			celula.innerHTML = atual;
+			celula.style.backgroundColor = cor;	
+			
+			if(verificarGanhador()){
+				reiniciar();
+			}
+		}
 		
-	}else
-		alert("Casa já ocupada!");	
+		marcarSom();		
+	//}else{
+	//	alert("Casa já ocupada!");
+	//}	
+}
+
+function verificarGanhador(){
+	if(verificarLinhas() || verificarColunas() || verificarVertical() || todasOcupadas())
+		return true;
+	
+	return false;
+}
+
+function pickRandom(){ //problem is here
+	var tabela = document.getElementsByTagName("table")[0];
+	var elementos = tabela.getElementsByTagName("td");
+	
+	//random number 0~occuped cel
+	var randomCel = Math.floor((Math.random() * 9));
+	console.log("randomCel: " + randomCel);
+	//is it occuped?
+	var text = true;
+	if(casasOcupadas() != 9){
+		while(text){
+					
+			if(elementos[randomCel].innerHTML != ""){ //it's occuped try again
+				randomCel = Math.floor((Math.random() * 9)); //pick another
+			}else{
+				text = false;
+			}
+		}
+	}else{
+		reiniciar();
+		return 0;
+	}
+	
+	return randomCel;
+}
+//return number of occuped cel
+function casasOcupadas(){
+	
+	var tabela = document.getElementsByTagName("table")[0];
+	var elementos = tabela.getElementsByTagName("td");
+	
+	var count = 0;
+	
+	for(var i = 0; i < elementos.length; i++){
+		if(elementos[i].innerHTML == "")
+			count++;
+	}
+	
+	return count;
+}
+/*function to get where computer need to play to not let me win
+
+*  0 1 2    if ( 0 && 1 && 2 == null) mark 2
+*  3 4 5	if( 3 && 5 && 5 == null) mark 5	
+*  6 7 8
+*  */
+function canWinCel(){
+	
+	var tabela = document.getElementsByTagName("table")[0];
+	var elementos = tabela.getElementsByTagName("td");
+	
+	if(casasOcupadas() == 1)
+		return pickRandom();
+	
+	for(var i = 0; i <  elementos.length; i+=3){ // i+=3 pular para próxima linha 0, 3, 6
+		if( elementos[i].innerHTML == "" && elementos[i + 1].innerHTML == "x" && elementos[i + 2].innerHTML == "x"){
+			return (i);			
+		}else if( elementos[i].innerHTML == "x" && elementos[i + 1].innerHTML == "" && elementos[i + 2].innerHTML == "x"){
+			return (i+1);			
+		}else if( elementos[i].innerHTML == "x" && elementos[i + 1].innerHTML == "x" && elementos[i + 2].innerHTML == ""){
+			return (i+2);
+		}
+	}
+	
+	for(var i = 0; i < elementos.length; i++){ //i++ pq as colunas vão de 1 em 1
+		if (i == 3) // verifiquei as 3 colunhas 0, 1, e 2 então sai do loop já que ninguém ganhou
+			break;
+		if( elementos[i].innerHTML == "" && elementos[i + 3].innerHTML == "x" && elementos[i + 6].innerHTML == "x"){
+			return i;
+		}else if( elementos[i].innerHTML == "x" && elementos[i + 3].innerHTML == "" && elementos[i + 6].innerHTML == "x"){
+			return (i+3);
+		}else if( elementos[i].innerHTML == "x" && elementos[i + 3].innerHTML == "x" && elementos[i + 6].innerHTML == ""){
+			return (i+6);
+		}
+	}	
+	
+	//x vertical
+	if( document.getElementById("1").innerHTML == "" 
+		&& document.getElementById("5").innerHTML == "x" 
+			&& document.getElementById("9").innerHTML == "x"){
+		return 0;
+	}else if( document.getElementById("1").innerHTML == "x" 
+			&& document.getElementById("5").innerHTML == "" 
+				&& document.getElementById("9").innerHTML == "x"){
+			return 4;
+	}else if( document.getElementById("1").innerHTML == "x" 
+		&& document.getElementById("5").innerHTML == "x" 
+			&& document.getElementById("9").innerHTML == ""){
+		return 8;		
+	}else if( document.getElementById("3").innerHTML == "" 
+		&& document.getElementById("5").innerHTML == "x" 
+			&& document.getElementById("7").innerHTML == "x"){
+		return 2;
+	}else if( document.getElementById("3").innerHTML == "x" 
+		&& document.getElementById("5").innerHTML == "" 
+			&& document.getElementById("7").innerHTML == "x"){
+		return 4;
+	}else if( document.getElementById("3").innerHTML == "x" 
+		&& document.getElementById("5").innerHTML == "x" 
+			&& document.getElementById("7").innerHTML == ""){
+		return 6;
+	}
+	
+	return pickRandom();
+	
+}
+
+function aiPlayRandom(celula){
+	//console.log("join aiPlayRandom");
+	var tabela = document.getElementsByTagName("table")[0];
+	var elementos = tabela.getElementsByTagName("td");
+	var random = 0 ;
+	if(casasOcupadas() != 9){
+		//console.log("casasOcupadas != 9");
+		random = pickRandom();
+		//console.log("random: " + random);
+			
+		elementos[random].innerHTML = "o";
+		elementos[random].style.backgroundColor = "red";
+	}
+	
+}
+
+function aiPlay(){
+	var tabela = document.getElementsByTagName("table")[0];
+	var elementos = tabela.getElementsByTagName("td");	
+	var cel = canWinCel();
+	console.log("Can win cel: " + cel);
+	elementos[cel].innerHTML = "o";
+	elementos[cel].style.backgroundColor = "red";
 	
 }
 
@@ -65,7 +245,7 @@ function todasOcupadas(){
 function verificarLinhas(){
 	/*
 	 * 0 1 2     0, 0+1, 0+2 , linha 0 : 0, 1, 2
-	 * 3 4 5	 3, 3+1, 3+2 , linha 2 : 3, 4, 5
+	 * 3 4 5	 3, 3+1, 3+2 , linha 3 : 3, 4, 5
 	 * 6 7 8	 6, 6+1, 6+2 , linha 6 : 6, 7, 8	
 	 * 
 	 * 
@@ -306,6 +486,59 @@ function verificar(){
 */
 
 /*
+ * 
+ * /*
+	if(!computadorAleatorio && !computador){ //human x human
+		if(celula.innerHTML == ""){
+			if(atual == "x"){
+				atual = "o";
+				cor = "red";
+			}
+			else{
+				atual = "x";
+				cor = "white";
+			}
+			marcarSom();
+			
+			celula.innerHTML = atual;
+			celula.style.backgroundColor = cor;	
+			
+			if(verificarGanhador())
+				reiniciar();
+					
+		}else
+			alert("Casa já ocupada!");
+	}else{//human (x) move than computer (o) move.
+		
+		if(celula.innerHTML == ""){
+			
+			celula.innerHTML = "x";
+			cor = "white";
+			celula.style.backgroundColor = cor;
+			
+			if(verificarGanhador()) //check winner
+				reiniciar();
+			
+			else{
+				if(computadorAleatorio){
+					aiPlayRandom(celula);
+					
+					if(verificarGanhador())
+						reiniciar();
+					
+				}else if(computador){			
+					
+					aiPlay();
+					
+					if(verificarGanhador())
+						reiniciar();
+				}
+			}			
+			
+		}		
+		marcarSom();
+		
+	}	
 function reiniciar(){
 	var casa1 = document.getElementById("1");
 	var casa2 = document.getElementById("2");
